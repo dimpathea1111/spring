@@ -1,4 +1,4 @@
-package bean;
+package co.istad.chhaaya.fswd_sbapp.bean;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

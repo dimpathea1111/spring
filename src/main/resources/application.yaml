@@ -1,1 +1,58 @@
-spring.application.name=fswd-sbapp
+#spring.application.name=fswd-sbapp
+#spring.application.anme=fswd-sbapp
+#server.port=8090
+
+#spring:
+#  application:
+#    name:fswd-abapp
+#server:
+#  port:8090
+#servlet:
+#    context-patjh:/istad
+
+
+#spring:
+#  application:
+#    name: fswd-abapp
+
+#2
+
+#spring:
+#  application:
+#    name: fswd-abapp
+#  profiles:
+#    active: prod
+#server:
+##  port: 3000
+#  servlet:
+#    context-path: /istad
+
+
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+        proxool:
+          properties:
+            hibernate:
+              format_sql=true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+    name: fswd-sbapp
+  application:
+    name: fswd-sbapp
+  profiles:
+    active: dev
+  jmx:
+    server:
+

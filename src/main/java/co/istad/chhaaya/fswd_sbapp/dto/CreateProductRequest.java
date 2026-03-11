@@ -1,4 +1,11 @@
 package co.istad.chhaaya.fswd_sbapp.dto;
 
-public record CreateProductRequest() {
+import java.math.BigDecimal;
+
+public record CreateProductRequest(
+        String name,
+        BigDecimal price
+)
+{
+
 }

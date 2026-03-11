@@ -1,4 +1,4 @@
-package bean;
+package co.istad.chhaaya.fswd_sbapp.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
