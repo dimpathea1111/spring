@@ -32,7 +32,10 @@ public class Category {
     @Column(nullable = false)
     private Boolean isDeleted;
 
-    // Relationship
+    // Relationsh ip here
+    //MappedBy , tell hibernate category relationship
+    //already establish in product
     @OneToMany(mappedBy = "category")
     private List<Product> products;
+
 }

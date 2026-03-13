@@ -8,21 +8,78 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "orders")
+import java.time.Instant;
+import java.util.List;
+import java.util.UUID;
+
+//@Entity
+//@Table(name = "orders")
+//@Getter
+//@Setter
+//@NoArgsConstructor
+//public class Order {
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Integer id;
+//
+//    private Integer quantity;
+//
+//    // Many orders can have the same product
+//    @ManyToOne
+//    @JoinColumn(name = "product_id")
+//    private Product product;
+//}
+
+//Make POLO (plain old javaobject)
 @Getter
 @Setter
 @NoArgsConstructor
+
+//Make JPA Entity
+@Entity
+@Table(name = "orders")
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
 
-    private Integer quantity;
+    private UUID id;
 
-    // Many orders can have the same product
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @Column(nullable = false)
+    private Float descount;
+
+    @Column(nullable = false)
+    private String address;
+
+    @Column(nullable = false)
+    private String orderedBy;
+
+    @Column(nullable = false)
+    private Instant orderedAt;
+
+    @Column(nullable = false)
+    private Boolean isDelete;
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderDetail> orderDetail;
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
